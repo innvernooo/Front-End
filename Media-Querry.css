@@ -1,0 +1,20 @@
+/* MOBILE FIRST APPROACH */
+/* Default untuk mobile = Menggunakan (min-width: ...px)*/
+h1 {
+    color: green;
+    
+}
+
+/* Tablet (769px - 1023px) */
+@media (min-width: 769px) {
+    h1 {
+        color: blue;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+}
+
+/* DESKTOP FIRST APPROACH */

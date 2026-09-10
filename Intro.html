@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro HTML</title>
+    <style>
+      table,
+      th,
+      tr,
+      td {
+        border: 0.5px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+</head>
+<body>
+    <!-- Heading Tags: Menuliskan judul halaman -->
+     <h1>Purwadhika</h1>
+     <h2>Purwadhika</h2>
+     <h3>Purwadhika</h3>
+     <h4>Purwadhika</h4>
+     <h5>Purwadhika</h5>
+     <h6>Purwadhika</h6>
+
+     <!-- Paragraph, Break, Comment -->
+      <p>
+        Clair Obscur: Expedition 33
+      </p>
+      <br/>
+      <p>
+        Clair Obscur: Expedition 33
+      </p>
+
+      <!-- Text Formatting -->
+       <b> Bold </b> <br />
+       <i> Italic </i> <br />
+       <u> Underlined </u> <br />
+       <mark> Marked </mark> <br />
+       <del> Deleted </del>
+
+       <!-- 
+       OL (Ordered list) = Menggunakan angka
+       UL (Unordered list) = menggunakan titik
+       -->
+
+       <ol>
+        <li> Gustave </li>
+        <li> Lune </li>
+       </ol>
+
+       <ul>
+        <li> Verso </li>
+        <li> Maelle </li>
+       </ul>
+
+       <!-- Table -->
+        <table>
+            <thead>
+                <th>Number</th>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr>  <!-- tr = table row -->
+                    <td>1</td> <!-- td = table data -->
+                    <td>Vian</td>
+                    <td>Jakarta</td>
+                    <td><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ian</td>
+                    <td>Makassar</td>
+                    <td><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Glenn</td>
+                    <td><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td rowspan="2">Riky</td>
+                    <td rowspan="2">Jakarta</td>
+                    <td rowspan="2"><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <br />
+    <!-- Anchor Tags -->
+     <a href="https://www.google.com">Link Gacorrr!!!</a>
+    <a href="./profile.html">Goto Profile Page</a>
+
+    <!-- Image Addition -->
+     <image
+     src="https://i.scdn.co/image/ab67616d00001e02f97bb96d5dbedde6c433a14b"
+     width="320px"
+     height="320px"
+     alt="Ini gambar Clair Obscur"
+     />
+     <image
+     src="./Image/Exp 33-1.jpg"
+     width="320px"
+     height="320px"
+     alt="Ini gambar Clair Obscur 2"
+     />
+    
+     <!-- Form Tags -->
+      <form>
+        <input type="text" placeholder="Type your username" />
+        <input type="password" placeholder="Type your password" /> <!-- HTML akan auto-hide -->
+        <input type="email" placeholder="Type your email" /> <!-- HTML akan mengharuskan menggunakan @ -->
+        <input type="radio">Male
+        <input type="radio">Female
+        <select>
+            <option>Select Province</option>
+            <option>Jawa Barat</option>
+            <option>Banten</option>
+        </select>
+        <button>Submit Form</button>
+    </form>
+</body>
+</html>

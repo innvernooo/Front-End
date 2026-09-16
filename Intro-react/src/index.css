@@ -2,5 +2,7 @@
 @plugin "daisyui";
 
 body {
-  background-image: url(./assets/Natural\ wooden\ planks\ background\,\ a\ Background\ Photo\ by\ MangoMind.jpg);
+  background-image: url(./assets/gambar\ 2.svg);
+  background-size: cover;
+  height: 100vh;
 }

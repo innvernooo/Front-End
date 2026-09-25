@@ -8,8 +8,10 @@ import {
   type LoginRequest,
 } from '@/feature/validation/loginValid';
 import { zodResolver } from '@hookform/resolvers/zod';
-import axios from 'axios';
 import { useMutation } from '@tanstack/react-query';
+import { LoginApi } from '@/Api/loginApi/LoginApi';
+import { useRouter } from 'next/navigation';
+import { useAuthStore } from '@/stores/useAuthStore';
 
 export default function LoginPage() {
   const {
@@ -22,20 +24,25 @@ export default function LoginPage() {
     resolver: zodResolver(loginSchema),
   });
 
+  const router = useRouter();
+  const { setAuth } = useAuthStore();
+
   const { mutate: loginMutation, isPending } = useMutation({
     mutationFn: async () => {
       const { email, password } = getValues();
-      await axios.post(
-        'https://api.backendless.com/51BDC217-6F0F-4668-8A87-71B5CFFCD59A/EC698C6A-021C-4A86-8DAD-32A425C360DD/users/login',
-        { login: email, password },
-      );
+      return await LoginApi({ email, password });
     },
     onSuccess: (res) => {
+      console.log(res);
       toast.success('Login berhasil!');
-      reset();
+      setAuth(res?.data?.email, res?.data?.username);
+      localStorage.setItem('email', res?.data?.email);
+      localStorage.setItem('username', res?.data?.username);
+      router.push('/admin');
     },
     onError: (res) => {
       toast.error('Login Gagal');
+      reset();
     },
   });
 
@@ -101,10 +108,7 @@ export default function LoginPage() {
               <div className="flex justify-center">
                 <p className="mt-3 text-sm">
                   Need administrative access?{' '}
-                  <a
-                    href="https://img.magnific.com/free-photo/vertical-shot-mon-tree-branch-outdoors-during-daylight_181624-48457.jpg?w=740&t=st=1726798965~exp=1726799565~hmac=ec8e637dfc0a62aabf54ffdb5e15e7accb31c39c02b21cfa7699185e94908c24"
-                    className="text-blue-700 underline"
-                  >
+                  <a href="register" className="text-blue-700 underline">
                     Request Account
                   </a>
                 </p>
